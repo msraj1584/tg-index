@@ -18,8 +18,8 @@ if not 1 <= port <= 65535:
     sys.exit(1)
 
 try:
-    api_id = int(os.environ[2719161])
-    api_hash = os.environ["7cee7c162f09ef31d18425ff64cb6552"]
+    api_id = int(os.environ["API_ID"])
+    api_hash = os.environ["API_HASH"]
 except (KeyError, ValueError):
     traceback.print_exc()
     print("\n\nPlease set the API_ID and API_HASH environment variables correctly")
@@ -35,12 +35,7 @@ except Exception:
     sys.exit(1)
 
 try:
-    session_string = os.environ["{
-  "index_all": true,
-  "index_private": false,
-  "index_group": false,
-  "index_channel": true,
-}"]
+    session_string = os.environ["SESSION_STRING"]
 except (KeyError, ValueError):
     traceback.print_exc()
     print("\n\nPlease set the SESSION_STRING environment variable correctly")

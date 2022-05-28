@@ -35,7 +35,12 @@ except Exception:
     sys.exit(1)
 
 try:
-    session_string = os.environ["SESSION_STRING"]
+    session_string = os.environ["{
+  "index_all": true,
+  "index_private": false,
+  "index_group": false,
+  "index_channel": true,
+}"]
 except (KeyError, ValueError):
     traceback.print_exc()
     print("\n\nPlease set the SESSION_STRING environment variable correctly")
